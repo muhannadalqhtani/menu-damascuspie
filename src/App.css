@@ -1,0 +1,147 @@
+/* ===== App.css (ضع هذا في src/App.css) ===== */
+/* 🔧 ضبط عام */
+* { box-sizing: border-box; }
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: #489f98; /* 🟢 خلفية المنيو */
+  color: #111;
+}
+
+:root { scroll-behavior: smooth; }
+
+/* 🧱 الحاوية */
+.container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+/* 🌆 الصفحة العامة */
+.page { min-height: 100vh; background-color: #489f98; }
+
+/* 🔴 التوب بار (الهيدر) */
+.topbar {
+  position: sticky;
+  top: 0;
+  background: #9e151a; /* اللون المطلوب للهيدر */
+  border-bottom: 1px solid #7e1115;
+  z-index: 10;
+  color: #fff;
+}
+.header-content { display: flex; align-items: center; justify-content: space-between; }
+.logo-title { display: flex; align-items: center; gap: 10px; }
+.logo { width: 55px; height: 55px; border-radius: 50%; background: #fff; border: 1px solid #e5e7eb; object-fit: contain; padding: 4px; }
+.brand { margin: 0; font-size: 26px; font-weight: 800; color: #fff; }
+.sub { color: #ffeaea; font-size: 13px; }
+
+/* 🧭 شريط الأقسام */
+.nav { border-top: 1px solid rgba(255, 255, 255, 0.25); background: #9e151a; }
+.nav-scroll { overflow-x: auto; }
+.hide-scrollbar { scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.nav-list { display: flex; gap: 8px; padding: 10px 16px; white-space: nowrap; list-style: none; margin: 0; }
+.pill { padding: 8px 14px; border-radius: 9999px; background: #fff; border: 1px solid #d1d5db; color: #111; font-weight: 600; text-decoration: none; transition: all .2s ease; }
+.pill:hover { background: #f3f4f6; transform: scale(1.03); }
+
+/* 🍽️ أقسام المنيو */
+.main { padding: 20px; }
+.section { padding: 24px 0; }
+.section + .section { border-top: 1px dashed rgba(255, 255, 255, 0.3); }
+.section-title { font-size: 22px; color: #fff; margin-bottom: 10px; font-weight: 800; }
+
+/* 🧃 شبكة البطاقات */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+.card { border-radius: 16px; background: #ffffffd9; box-shadow: 0 4px 10px rgba(0,0,0,0.08); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; cursor: pointer; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+.thumb { aspect-ratio: 1/1; overflow: hidden; background: #f3f4f6; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.card:hover img { transform: scale(1.05); }
+.info { padding: 12px 14px 14px; }
+.title { font-size: 16px; font-weight: 700; color: #222; margin: 0 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.price { color: #047857; font-weight: 800; }
+.currency { margin-right: 3px; color: #065f46; }
+.missing { color: #b91c1c; font-size: 12px; margin-top: 6px; }
+
+/* 🪟 نافذة التفاصيل (Modal) */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: grid; place-items: center; padding: 16px; z-index: 50; }
+.modal { width: min(900px, 96vw); background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
+.modal-header { display:flex; justify-content:flex-end; padding:10px; background:#f8f9fa; border-bottom:1px solid #eee; }
+.modal-close { background:#fff; border:1px solid #e5e7eb; width:36px; height:36px; border-radius:9999px; font-size:22px; line-height:1; cursor:pointer; }
+.modal-body { display:grid; grid-template-columns: 1fr; gap: 0; }
+@media (min-width: 768px){ .modal-body { grid-template-columns: 1.2fr 1fr; } }
+.modal-media { background:#f3f4f6; }
+.modal-media img { width:100%; height:100%; max-height:420px; object-fit:cover; display:block; }
+.modal-info { padding:16px 18px 20px; }
+.modal-title { margin:0 0 8px; font-weight:800; font-size:22px; }
+.modal-price { font-weight:900; color:#047857; margin-bottom:10px; }
+.modal-meta { font-size:13px; color:#6b7280; margin:6px 0; }
+.modal-meta span { color:#374151; font-weight:700; margin-inline-start:6px; }
+.modal-desc { margin-top:10px; color:#374151; line-height:1.6; }
+
+/* ⚓ الفوتر */
+.footer { text-align: center; color: #f5f5f5; font-size: 13px; margin: 26px 0 10px; }
+.footer { text-align: center; color: #f5f5f5; font-size: 13px; margin: 26px 0 10px; }
+
+/* شرائط المزايا */
+.meta-row { display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 10px; }
+.badge { display:inline-flex; align-items:center; padding:4px 10px; border-radius:9999px; border:1px solid #e5e7eb; font-size:13px; background:#f9fafb; }
+
+/* قائمة التفاصيل */
+.details { margin: 10px 0 0; padding-inline-start: 18px; color:#374151; line-height:1.7; }
+.details li { margin: 4px 0; }
+
+/* بانر الفاصل بين الأقسام */
+.divider-wrap {
+  margin: 34px auto 40px;
+  max-width: 1100px;   /* يطابق .container تقريبًا */
+  padding: 0 16px;
+}
+.section-banner {
+  width: 100%;
+  max-height: 220px;   /* عدّل الارتفاع كما تريد */
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  display: block;
+}
+
+
+/* ===== Admin styles ===== */
+.admin { background:#0e2f2d; min-height:100vh; color:#fff; }
+.admin-container { max-width:1100px; margin:0 auto; padding:16px; }
+.admin-topbar { position:sticky; top:0; z-index:40; background:#9e151a; border-bottom:1px solid #7e1115; }
+.admin-topbar__inner { display:flex; align-items:center; justify-content:space-between; }
+.admin-brand { font-weight:800; letter-spacing:.2px; }
+.admin-main { padding-top:14px; padding-bottom:60px; }
+.admin-card { background:#0f3b39; border:1px solid #144845; border-radius:16px; margin-bottom:18px; overflow:hidden; }
+.admin-card__head { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; background:#114541; border-bottom:1px solid #144845; }
+.admin-card__body { padding:16px; }
+.admin-title { font-size:18px; font-weight:800; }
+.admin-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.admin-btn { background:#16a34a; border:none; color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; }
+.admin-btn:hover { filter:brightness(1.05); }
+.admin-btn:disabled { opacity:.6; cursor:not-allowed; }
+.admin-btn--danger { background:#dc2626; }
+.admin-btn--light { background:#374151; }
+.admin-field { display:flex; flex-direction:column; gap:6px; }
+.admin-field > span { font-size:12px; color:#c9d1d9; }
+.admin-field input,
+.admin-field textarea { background:#0e2f2d; border:1px solid #215a56; color:#fff; border-radius:10px; padding:10px 12px; outline:none; }
+.admin-field textarea { resize:vertical; }
+.admin-grid-4 { display:grid; gap:12px; grid-template-columns: repeat(1, minmax(0,1fr)); }
+.admin-grid-6 { display:grid; gap:12px; grid-template-columns: repeat(1, minmax(0,1fr)); }
+@media (min-width: 700px){
+  .admin-grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .admin-grid-6 { grid-template-columns: repeat(6, 1fr); }
+}
+.admin-muted { color:#a7b4b3; font-size:13px; padding:6px 2px; }
+.admin-subtitle { margin:10px 0 8px; font-weight:800; }
+.admin-divider { border-top:1px dashed #1c5956; margin:14px 0; }
+.admin-cat { padding:14px; border:1px solid #144845; border-radius:12px; background:#0e3533; margin-bottom:14px; }
+.admin-cat__bar { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.admin-cat__title { display:flex; gap:10px; align-items:baseline; }
+.admin-item-row { padding:10px 12px; background:#0f3b39; border:1px solid #144845; border-radius:12px; margin-bottom:10px; }
+.admin-additem { padding:12px; background:#0f3b39; border:1px dashed #20524f; border-radius:12px; }
+.admin-alert { margin:12px 0; padding:10px 14px; border-radius:10px; font-weight:700; }
+.admin-alert--ok { background:#064e3b; border:1px solid #10b981; color:#d1fae5; }
+.admin-alert--error { background:#7f1d1d; border:1px solid #f87171; color:#fee2e2; }

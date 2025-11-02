@@ -1,0 +1,28 @@
+body {
+  background-color: #003c37;
+  color: white;
+  font-family: "Tahoma", sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #0b5;
+  padding: 8px;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 6px;
+  border: 0;
+  padding: 6px 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
